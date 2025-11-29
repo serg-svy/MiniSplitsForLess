@@ -59,12 +59,6 @@
         "@type": "Organization",
         "name": {{ shop.name | json }}
       }
-      {% if review.verified == true %}
-      ,"author": {
-        "@type": "Person",
-        "name": {{ review.author | json }}
-      }
-      {% endif %}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]

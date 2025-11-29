@@ -78,6 +78,8 @@ Allow: /blogs/
 # SITEMAP
 # ==================
 
+# Static example - For Shopify, use dynamic URL:
+# Sitemap: {{ shop.url }}/sitemap.xml
 Sitemap: https://minisplitsforless.com/sitemap.xml
 
 # ==================

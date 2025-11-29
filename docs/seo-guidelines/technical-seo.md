@@ -24,9 +24,10 @@ Core Web Vitals are Google's metrics for measuring user experience:
 | Metric | What It Measures | Target |
 |--------|------------------|--------|
 | LCP (Largest Contentful Paint) | Loading performance | ≤ 2.5 seconds |
-| FID (First Input Delay) | Interactivity | ≤ 100 milliseconds |
+| INP (Interaction to Next Paint) | Interactivity/Responsiveness | ≤ 200 milliseconds |
 | CLS (Cumulative Layout Shift) | Visual stability | ≤ 0.1 |
-| INP (Interaction to Next Paint) | Responsiveness | ≤ 200 milliseconds |
+
+> **Note:** INP (Interaction to Next Paint) replaced FID (First Input Delay) as the primary interactivity metric in March 2024. FID is now considered a legacy metric.
 
 ### Measuring Core Web Vitals
 
@@ -65,12 +66,13 @@ Core Web Vitals are Google's metrics for measuring user experience:
 >
 ```
 
-### Improving FID/INP (Interactivity)
+### Improving INP (Interaction to Next Paint)
 
 **Common Issues:**
 - Heavy JavaScript execution
 - Long tasks blocking main thread
 - Third-party scripts
+- Slow event handlers
 
 **Solutions:**
 ```html
