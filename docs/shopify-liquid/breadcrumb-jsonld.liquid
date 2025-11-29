@@ -1,0 +1,131 @@
+{% comment %}
+  MiniSplitsForLess - Breadcrumb JSON-LD Schema
+  
+  Place this snippet in your theme.liquid or specific templates:
+  {% render 'breadcrumb-jsonld' %}
+  
+  Supports:
+  - Home page
+  - Collection pages
+  - Product pages
+  - Custom pages
+  - Blog and article pages
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ shop.url }}"
+    }
+    {% if template contains 'collection' and collection %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ collection.title | json }},
+      "item": "{{ shop.url }}{{ collection.url }}"
+    }
+    {% endif %}
+    
+    {% if template contains 'product' and product %}
+      {% comment %} Try to get collection from product {% endcomment %}
+      {% if collection %}
+      ,{
+        "@type": "ListItem",
+        "position": 2,
+        "name": {{ collection.title | json }},
+        "item": "{{ shop.url }}{{ collection.url }}"
+      }
+      ,{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ product.title | json }},
+        "item": "{{ shop.url }}{{ product.url }}"
+      }
+      {% elsif product.collections.first %}
+      ,{
+        "@type": "ListItem",
+        "position": 2,
+        "name": {{ product.collections.first.title | json }},
+        "item": "{{ shop.url }}{{ product.collections.first.url }}"
+      }
+      ,{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ product.title | json }},
+        "item": "{{ shop.url }}{{ product.url }}"
+      }
+      {% else %}
+      ,{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "{{ shop.url }}/collections/all"
+      }
+      ,{
+        "@type": "ListItem",
+        "position": 3,
+        "name": {{ product.title | json }},
+        "item": "{{ shop.url }}{{ product.url }}"
+      }
+      {% endif %}
+    {% endif %}
+    
+    {% if template contains 'page' and page %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | json }},
+      "item": "{{ shop.url }}{{ page.url }}"
+    }
+    {% endif %}
+    
+    {% if template contains 'blog' and blog %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ blog.title | json }},
+      "item": "{{ shop.url }}{{ blog.url }}"
+    }
+    {% endif %}
+    
+    {% if template contains 'article' and article %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ blog.title | json }},
+      "item": "{{ shop.url }}{{ blog.url }}"
+    }
+    ,{
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ article.title | json }},
+      "item": "{{ shop.url }}{{ article.url }}"
+    }
+    {% endif %}
+    
+    {% if template == 'cart' %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Shopping Cart",
+      "item": "{{ shop.url }}/cart"
+    }
+    {% endif %}
+    
+    {% if template == 'search' %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Search Results",
+      "item": "{{ shop.url }}/search"
+    }
+    {% endif %}
+  ]
+}
+</script>

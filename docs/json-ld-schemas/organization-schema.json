@@ -1,0 +1,154 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MiniSplitsForLess",
+  "alternateName": "Mini Splits For Less",
+  "url": "https://minisplitsforless.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://minisplitsforless.com/images/logo.png",
+    "width": "300",
+    "height": "60"
+  },
+  "description": "USA HVAC Online Retailer specializing in ductless mini split systems, multi-zone and single-zone AC units, energy-efficient cooling and heating solutions. Featuring Cooper & Hunter and OLMO brands with free nationwide shipping.",
+  "foundingDate": "2020",
+  "email": "support@minisplitsforless.com",
+  "telephone": "+1-800-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "sameAs": [
+    "https://www.facebook.com/minisplitsforless",
+    "https://www.instagram.com/minisplitsforless",
+    "https://twitter.com/minisplitsforless",
+    "https://www.youtube.com/minisplitsforless"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-XXX-XXXX",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Spanish"],
+      "areaServed": "US",
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-XXX-XXXX",
+      "contactType": "sales",
+      "availableLanguage": ["English", "Spanish"],
+      "areaServed": "US"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-XXX-XXXX",
+      "contactType": "technical support",
+      "availableLanguage": ["English"],
+      "areaServed": "US"
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "brand": [
+    {
+      "@type": "Brand",
+      "name": "Cooper & Hunter"
+    },
+    {
+      "@type": "Brand",
+      "name": "OLMO"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mini Split Systems",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Single-Zone Mini Splits",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "9000 BTU Mini Split Systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "12000 BTU Mini Split Systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "18000 BTU Mini Split Systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "24000 BTU Mini Split Systems"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Multi-Zone Mini Splits",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Dual Zone Mini Split Systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Tri Zone Mini Split Systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Quad Zone Mini Split Systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "5 Zone Mini Split Systems"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "slogan": "Energy-Efficient Cooling & Heating. Free Nationwide Shipping.",
+  "paymentAccepted": ["Credit Card", "PayPal", "Shop Pay", "Apple Pay", "Google Pay"],
+  "currenciesAccepted": "USD",
+  "priceRange": "$$"
+}

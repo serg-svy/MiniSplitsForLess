@@ -1,0 +1,157 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Cooper & Hunter 12000 BTU Mini Split Ductless Air Conditioner",
+  "description": "Energy-efficient 12000 BTU ductless mini split air conditioner with heat pump. SEER 22 rating, covers up to 550 sq ft. WiFi enabled with smart home compatibility. Includes indoor and outdoor units with 15ft installation kit.",
+  "sku": "CH-12000-MS",
+  "mpn": "CH-MZ-12K-230V",
+  "gtin13": "0123456789012",
+  "brand": {
+    "@type": "Brand",
+    "name": "Cooper & Hunter"
+  },
+  "image": [
+    "https://minisplitsforless.com/images/products/ch-12000-main.jpg",
+    "https://minisplitsforless.com/images/products/ch-12000-side.jpg",
+    "https://minisplitsforless.com/images/products/ch-12000-installed.jpg"
+  ],
+  "category": "Ductless Mini Split Systems > Single-Zone",
+  "color": "White",
+  "material": "ABS Plastic, Aluminum",
+  "weight": {
+    "@type": "QuantitativeValue",
+    "value": "85",
+    "unitCode": "LBR"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "BTU Rating",
+      "value": "12000"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "SEER Rating",
+      "value": "22"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Coverage Area",
+      "value": "400-550 sq ft"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Voltage",
+      "value": "208-230V"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Refrigerant Type",
+      "value": "R410A"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Cooling Capacity",
+      "value": "12000 BTU/h"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Heating Capacity",
+      "value": "13000 BTU/h"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Noise Level (Indoor)",
+      "value": "26-40 dB"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "WiFi Enabled",
+      "value": "Yes"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Installation Kit Included",
+      "value": "15ft copper line set"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://minisplitsforless.com/products/cooper-hunter-12000-btu-mini-split",
+    "priceCurrency": "USD",
+    "price": "899.00",
+    "priceValidUntil": "2024-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": "MiniSplitsForLess"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "2",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "3",
+          "maxValue": "7",
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": "30",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "156",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "John D."
+      },
+      "datePublished": "2024-01-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Excellent mini split! Easy to install and very quiet. Cools my bedroom perfectly and the WiFi app works great.",
+      "name": "Perfect for my home office"
+    }
+  ],
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Cooper & Hunter",
+    "url": "https://www.cooperandhunter.com"
+  },
+  "itemCondition": "https://schema.org/NewCondition",
+  "warranty": "5-year compressor warranty, 2-year parts warranty"
+}
