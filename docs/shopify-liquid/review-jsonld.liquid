@@ -1,0 +1,174 @@
+{% comment %}
+  MiniSplitsForLess - Review JSON-LD Schema
+  
+  Place this snippet on product pages to output review structured data:
+  {% render 'review-jsonld' %}
+  
+  Supports multiple review apps:
+  - Judge.me
+  - Yotpo
+  - Stamped.io
+  - Shopify native product reviews
+  - Custom metafield reviews
+  
+  Note: This snippet outputs individual reviews. For aggregate ratings,
+  they are included in the main product-jsonld.liquid snippet.
+{% endcomment %}
+
+{% if product %}
+{% comment %} Check for reviews in various metafield formats {% endcomment %}
+
+{% comment %} === Judge.me Reviews === {% endcomment %}
+{% if product.metafields.judgeme.widget != blank %}
+  {% comment %} 
+    Judge.me provides reviews via their widget. The structured data 
+    is typically handled by their app automatically. This section
+    is a fallback if you want to manually extract review data.
+  {% endcomment %}
+{% endif %}
+
+{% comment %} === Custom Metafield Reviews === {% endcomment %}
+{% if product.metafields.custom.reviews != blank %}
+  {% assign reviews = product.metafields.custom.reviews.value %}
+  {% if reviews.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "review": [
+    {% for review in reviews limit: 10 %}
+    {
+      "@type": "Review",
+      {% if review.title != blank %}
+      "name": {{ review.title | json }},
+      {% endif %}
+      "author": {
+        "@type": "Person",
+        "name": {{ review.author | default: "Verified Customer" | json }}
+      },
+      "datePublished": "{{ review.date | default: 'now' | date: '%Y-%m-%d' }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": {{ review.rating | default: 5 | json }},
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": {{ review.body | json }},
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+      {% if review.verified == true %}
+      ,"author": {
+        "@type": "Person",
+        "name": {{ review.author | json }}
+      }
+      {% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+  {% comment %} Aggregate Rating {% endcomment %}
+  {% assign total_rating = 0 %}
+  {% for review in reviews %}
+    {% assign total_rating = total_rating | plus: review.rating %}
+  {% endfor %}
+  {% assign avg_rating = total_rating | divided_by: reviews.size %}
+  ,"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ avg_rating | json }},
+    "reviewCount": {{ reviews.size | json }},
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+  {% endif %}
+{% endif %}
+
+{% comment %} === Shopify Native Reviews (metaobject) === {% endcomment %}
+{% if product.metafields.reviews.rating.value != blank %}
+  {% assign rating = product.metafields.reviews.rating.value %}
+  {% assign rating_count = product.metafields.reviews.rating_count.value | default: 0 %}
+  
+  {% if rating_count > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ rating | json }},
+    "reviewCount": {{ rating_count | json }},
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+  {% endif %}
+{% endif %}
+
+{% comment %} === Example Static Reviews (for testing/demo) === {% endcomment %}
+{% comment %}
+Uncomment this section for testing purposes or as a template:
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "156",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "name": "Perfect for my home office",
+      "author": {
+        "@type": "Person",
+        "name": "John D."
+      },
+      "datePublished": "2024-01-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Excellent mini split! Easy to install and very quiet. Cools my bedroom perfectly and the WiFi app works great.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiniSplitsForLess"
+      }
+    },
+    {
+      "@type": "Review",
+      "name": "Great value for money",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah M."
+      },
+      "datePublished": "2024-01-08",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "We had a professional install this in our sunroom and it works amazing. Very happy with this purchase!",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiniSplitsForLess"
+      }
+    }
+  ]
+}
+</script>
+{% endcomment %}
+
+{% endif %}

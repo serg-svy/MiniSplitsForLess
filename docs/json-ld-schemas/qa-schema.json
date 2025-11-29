@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "QAPage",
+  "mainEntity": {
+    "@type": "Question",
+    "name": "Is the Cooper & Hunter 12000 BTU Mini Split quiet enough for a bedroom?",
+    "text": "I'm looking to install a mini split in my master bedroom. How quiet is this unit when running at night? I'm a light sleeper and noise is my main concern.",
+    "answerCount": 3,
+    "dateCreated": "2024-01-10",
+    "author": {
+      "@type": "Person",
+      "name": "SleepyHomeowner"
+    },
+    "upvoteCount": 24,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Cooper & Hunter 12000 BTU mini split operates at just 26 dB on the lowest fan setting, which is quieter than a whisper (30 dB). Many customers report sleeping comfortably with the unit running. The inverter technology eliminates the start-stop cycling noise common in traditional AC units. For maximum quiet operation, use the 'sleep mode' feature which reduces noise to the minimum level.",
+      "dateCreated": "2024-01-11",
+      "author": {
+        "@type": "Person",
+        "name": "MiniSplitsForLess Support"
+      },
+      "upvoteCount": 45,
+      "url": "https://minisplitsforless.com/products/cooper-hunter-12000-btu-mini-split#qa-1"
+    },
+    "suggestedAnswer": [
+      {
+        "@type": "Answer",
+        "text": "I have this exact unit in my bedroom and it's incredibly quiet. Can't even tell it's running most of the time. The low fan speed is basically silent - way quieter than my old window AC. Highly recommend for bedrooms!",
+        "dateCreated": "2024-01-12",
+        "author": {
+          "@type": "Person",
+          "name": "QuietSleeper99"
+        },
+        "upvoteCount": 18,
+        "url": "https://minisplitsforless.com/products/cooper-hunter-12000-btu-mini-split#qa-1-answer-2"
+      },
+      {
+        "@type": "Answer",
+        "text": "Bought this for my bedroom 6 months ago. On sleep mode it's 26dB which is basically inaudible. The outdoor unit is also reasonably quiet at about 52dB. Just make sure to install the outdoor unit away from bedroom windows if possible.",
+        "dateCreated": "2024-01-15",
+        "author": {
+          "@type": "Person",
+          "name": "HVACEnthusiast"
+        },
+        "upvoteCount": 12,
+        "url": "https://minisplitsforless.com/products/cooper-hunter-12000-btu-mini-split#qa-1-answer-3"
+      }
+    ]
+  }
+}

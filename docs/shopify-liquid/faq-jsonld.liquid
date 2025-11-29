@@ -1,0 +1,106 @@
+{% comment %}
+  MiniSplitsForLess - FAQ JSON-LD Schema
+  
+  Place this snippet on FAQ pages or product pages with FAQ sections:
+  {% render 'faq-jsonld', faqs: page.metafields.custom.faqs %}
+  
+  Or use with hardcoded FAQs:
+  {% render 'faq-jsonld' %}
+  
+  Supports:
+  - Dynamic FAQs from metafields
+  - Static FAQ content
+  - Product-specific FAQs
+{% endcomment %}
+
+{% comment %} Check for FAQ metafields or use defaults {% endcomment %}
+{% assign faq_content = faqs | default: product.metafields.custom.faqs | default: page.metafields.custom.faqs %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% if faq_content != blank %}
+      {% comment %} Dynamic FAQs from metafield (expects JSON array) {% endcomment %}
+      {% assign faq_items = faq_content.value %}
+      {% for faq in faq_items %}
+      {
+        "@type": "Question",
+        "name": {{ faq.question | json }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ faq.answer | json }}
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    {% else %}
+      {% comment %} Default HVAC Mini Split FAQs {% endcomment %}
+      {
+        "@type": "Question",
+        "name": "What size mini split do I need for my room?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As a general rule, you need about 20 BTU per square foot of living space. For a 250 sq ft room, a 6,000 BTU unit is sufficient. For 400-550 sq ft, choose a 12,000 BTU unit. For 550-700 sq ft, go with 18,000 BTU. Factors like ceiling height, insulation quality, sun exposure, and climate zone may require adjustments to these calculations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I install a mini split system myself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While some DIY-friendly mini split systems come with pre-charged refrigerant lines, we recommend professional installation for optimal performance and to maintain warranty coverage. Professional installation ensures proper refrigerant handling, electrical connections, and unit placement for maximum efficiency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a SEER rating and why does it matter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEER (Seasonal Energy Efficiency Ratio) measures how efficiently an air conditioner cools over an entire season. Higher SEER ratings mean lower energy bills. Mini splits with SEER ratings of 20+ are considered highly efficient. A unit with SEER 22 can save 30-50% on cooling costs compared to older systems with SEER 10-13."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do mini splits provide both heating and cooling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Most modern mini split systems are heat pumps that provide both cooling in summer and heating in winter. They can efficiently heat your space down to temperatures as low as -15°F to -22°F depending on the model. This makes them an excellent year-round climate control solution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does MiniSplitsForLess offer free shipping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! MiniSplitsForLess offers free nationwide shipping on all mini split systems within the continental United States. Most orders ship within 1-2 business days and arrive within 3-7 business days depending on your location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the warranty on mini split systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Warranty coverage varies by brand and model. Most brands we carry offer 5-year compressor warranties and 2-year parts warranties. Cooper & Hunter and OLMO products come with comprehensive manufacturer warranties. Extended warranty options are available at checkout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between single-zone and multi-zone systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Single-zone systems have one outdoor unit connected to one indoor unit, ideal for cooling/heating a single room or space. Multi-zone systems have one outdoor unit connected to 2-5 indoor units, allowing independent temperature control in multiple rooms. Multi-zone systems are more cost-effective than installing separate single-zone systems for multiple rooms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do mini split systems last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With proper maintenance, mini split systems typically last 15-20 years. Regular maintenance includes cleaning filters monthly, annual professional inspections, and keeping the outdoor unit clear of debris. Inverter-driven compressors in modern units experience less wear and tend to have longer lifespans than traditional AC systems."
+        }
+      }
+    {% endif %}
+  ]
+}
+</script>

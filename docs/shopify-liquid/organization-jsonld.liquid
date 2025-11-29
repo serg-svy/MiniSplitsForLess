@@ -1,0 +1,126 @@
+{% comment %}
+  MiniSplitsForLess - Organization JSON-LD Schema
+  
+  Place this snippet in your theme.liquid file (in the <head> section):
+  {% render 'organization-jsonld' %}
+  
+  This provides global organization/business information for search engines.
+  Should be included on every page.
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ shop.url }}/#organization",
+  "name": {{ shop.name | json }},
+  "alternateName": "Mini Splits For Less",
+  "url": "{{ shop.url }}",
+  {% comment %} Logo - Update path to your actual logo {% endcomment %}
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ 'logo.png' | asset_url }}",
+    "width": "300",
+    "height": "60"
+  },
+  "description": {{ shop.description | default: "USA HVAC Online Retailer specializing in ductless mini split systems, multi-zone and single-zone AC units, energy-efficient cooling and heating solutions. Featuring Cooper & Hunter and OLMO brands with free nationwide shipping." | json }},
+  {% if shop.email != blank %}
+  "email": {{ shop.email | json }},
+  {% endif %}
+  {% if shop.phone != blank %}
+  "telephone": {{ shop.phone | json }},
+  {% endif %}
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  {% comment %} Social Media Links - Update with your actual profiles {% endcomment %}
+  "sameAs": [
+    {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}",{% endif %}
+    {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}",{% endif %}
+    {% if settings.social_twitter_link != blank %}"{{ settings.social_twitter_link }}",{% endif %}
+    {% if settings.social_youtube_link != blank %}"{{ settings.social_youtube_link }}",{% endif %}
+    {% if settings.social_pinterest_link != blank %}"{{ settings.social_pinterest_link }}"{% endif %}
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      {% if shop.phone != blank %}
+      "telephone": {{ shop.phone | json }},
+      {% else %}
+      "telephone": "+1-800-XXX-XXXX",
+      {% endif %}
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Spanish"],
+      "areaServed": "US",
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      {% if shop.phone != blank %}
+      "telephone": {{ shop.phone | json }},
+      {% else %}
+      "telephone": "+1-800-XXX-XXXX",
+      {% endif %}
+      "contactType": "sales",
+      "availableLanguage": ["English", "Spanish"],
+      "areaServed": "US"
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  {% comment %} Brands carried by the store {% endcomment %}
+  "brand": [
+    {
+      "@type": "Brand",
+      "name": "Cooper & Hunter"
+    },
+    {
+      "@type": "Brand",
+      "name": "OLMO"
+    }
+  ],
+  {% comment %} Payment methods accepted {% endcomment %}
+  "paymentAccepted": ["Credit Card", "PayPal", "Shop Pay", "Apple Pay", "Google Pay"],
+  "currenciesAccepted": {{ cart.currency.iso_code | json }},
+  "priceRange": "$$",
+  {% comment %} Search action for sitelinks search box {% endcomment %}
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+{% comment %} WebSite Schema for Sitelinks Search Box {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "{{ shop.url }}/#website",
+  "name": {{ shop.name | json }},
+  "url": "{{ shop.url }}",
+  "publisher": {
+    "@id": "{{ shop.url }}/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>

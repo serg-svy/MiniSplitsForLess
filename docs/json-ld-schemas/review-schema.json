@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Cooper & Hunter 12000 BTU Mini Split Ductless Air Conditioner",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "156",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "156"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "name": "Perfect for my home office",
+      "author": {
+        "@type": "Person",
+        "name": "John D."
+      },
+      "datePublished": "2024-01-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Excellent mini split! Easy to install and very quiet. Cools my 400 sq ft home office perfectly and the WiFi app works great. Energy bills went down about 30% compared to my old window unit. The installation kit had everything I needed.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiniSplitsForLess"
+      },
+      "positiveNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Very quiet operation"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Energy efficient"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "WiFi app works perfectly"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Review",
+      "name": "Great value for the price",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah M."
+      },
+      "datePublished": "2024-01-08",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "We had a professional install this in our sunroom and it works amazing. Keeps the room at 72 degrees even when it's 95 outside. The heating function is also great for winter - tested it in December and it heats efficiently down to about 20°F outside temp. Very happy with this purchase!",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiniSplitsForLess"
+      }
+    },
+    {
+      "@type": "Review",
+      "name": "Solid unit, minor learning curve",
+      "author": {
+        "@type": "Person",
+        "name": "Mike T."
+      },
+      "datePublished": "2024-01-02",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Unit works great once you figure out all the settings. The remote has a lot of options which was overwhelming at first. WiFi setup took a few tries but customer support helped me through it. Cooling performance is excellent - way better than expected. Taking off one star because the installation manual could be clearer.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiniSplitsForLess"
+      },
+      "negativeNotes": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Installation manual could be clearer"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "WiFi setup required multiple attempts"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Review",
+      "name": "Best mini split for the money",
+      "author": {
+        "@type": "Person",
+        "name": "Robert K."
+      },
+      "datePublished": "2023-12-20",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "I've installed 3 of these Cooper & Hunter units in my house now. They're reliable, efficient, and the price is unbeatable. SEER 22 rating is real - my electric bill confirms it. Free shipping from MiniSplitsForLess was fast too. Arrived in 4 days. Definitely recommend to anyone looking for a quality ductless system.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiniSplitsForLess"
+      }
+    },
+    {
+      "@type": "Review",
+      "name": "Good but outdoor unit is larger than expected",
+      "author": {
+        "@type": "Person",
+        "name": "Lisa W."
+      },
+      "datePublished": "2023-12-15",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "The mini split works great - cools my bedroom quickly and quietly. Only complaint is the outdoor condenser is bigger than I expected from the photos. Make sure you measure your installation space carefully. Other than that, no complaints. Good product.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiniSplitsForLess"
+      }
+    }
+  ]
+}

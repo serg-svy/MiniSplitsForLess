@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "@id": "https://minisplitsforless.com/#organization",
+  "name": "MiniSplitsForLess",
+  "alternateName": "Mini Splits For Less",
+  "description": "Online HVAC store specializing in ductless mini split systems, multi-zone and single-zone AC units, energy-efficient cooling and heating solutions.",
+  "url": "https://minisplitsforless.com",
+  "logo": "https://minisplitsforless.com/images/logo.png",
+  "image": "https://minisplitsforless.com/images/storefront.jpg",
+  "telephone": "+1-800-XXX-XXXX",
+  "email": "support@minisplitsforless.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.7128",
+    "longitude": "-74.0060"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "priceRange": "$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Credit Card, PayPal, Shop Pay",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "523",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "David R."
+      },
+      "datePublished": "2024-01-20",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Great selection of mini splits and excellent customer service. Free shipping was a huge plus!"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/minisplitsforless",
+    "https://www.instagram.com/minisplitsforless",
+    "https://twitter.com/minisplitsforless"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "HVAC Products",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mini Split Systems",
+          "description": "Ductless mini split air conditioning and heating systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Free Shipping",
+          "description": "Free nationwide shipping on all orders"
+        }
+      }
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://minisplitsforless.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}

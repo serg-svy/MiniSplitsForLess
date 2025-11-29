@@ -1,0 +1,201 @@
+{% comment %}
+  MiniSplitsForLess - Product JSON-LD Schema
+  
+  Place this snippet in your product.liquid template or include it via:
+  {% render 'product-jsonld' %}
+  
+  Supports:
+  - Product structured data
+  - Offers with price and availability
+  - Aggregate ratings and reviews
+  - Shipping details
+  - Return policy
+  - Product specifications (via metafields)
+{% endcomment %}
+
+{% if product %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | truncate: 500 | json }},
+  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  {% if product.selected_or_first_available_variant.barcode != blank %}
+  "gtin13": {{ product.selected_or_first_available_variant.barcode | json }},
+  {% endif %}
+  "mpn": {{ product.selected_or_first_available_variant.sku | json }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ product.vendor | json }}
+  },
+  "image": [
+    {% for image in product.images limit: 5 %}
+    {{ image | image_url: width: 1200 | json }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "url": "{{ shop.url }}{{ product.url }}",
+  {% if product.type != blank %}
+  "category": {{ product.type | json }},
+  {% endif %}
+  
+  {% comment %} Product Specifications via Metafields {% endcomment %}
+  {% if product.metafields.custom.btu_rating or product.metafields.custom.seer_rating %}
+  "additionalProperty": [
+    {% if product.metafields.custom.btu_rating %}
+    {
+      "@type": "PropertyValue",
+      "name": "BTU Rating",
+      "value": {{ product.metafields.custom.btu_rating | json }}
+    },
+    {% endif %}
+    {% if product.metafields.custom.seer_rating %}
+    {
+      "@type": "PropertyValue",
+      "name": "SEER Rating",
+      "value": {{ product.metafields.custom.seer_rating | json }}
+    },
+    {% endif %}
+    {% if product.metafields.custom.coverage_area %}
+    {
+      "@type": "PropertyValue",
+      "name": "Coverage Area",
+      "value": {{ product.metafields.custom.coverage_area | json }}
+    },
+    {% endif %}
+    {% if product.metafields.custom.voltage %}
+    {
+      "@type": "PropertyValue",
+      "name": "Voltage",
+      "value": {{ product.metafields.custom.voltage | json }}
+    },
+    {% endif %}
+    {% if product.metafields.custom.refrigerant_type %}
+    {
+      "@type": "PropertyValue",
+      "name": "Refrigerant Type",
+      "value": {{ product.metafields.custom.refrigerant_type | json }}
+    },
+    {% endif %}
+    {% if product.metafields.custom.noise_level %}
+    {
+      "@type": "PropertyValue",
+      "name": "Noise Level",
+      "value": {{ product.metafields.custom.noise_level | json }}
+    },
+    {% endif %}
+    {% if product.metafields.custom.wifi_enabled %}
+    {
+      "@type": "PropertyValue",
+      "name": "WiFi Enabled",
+      "value": "{% if product.metafields.custom.wifi_enabled %}Yes{% else %}No{% endif %}"
+    }
+    {% endif %}
+  ],
+  {% endif %}
+  
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "price": {{ product.selected_or_first_available_variant.price | money_without_currency | remove: ',' | json }},
+    {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+    "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
+    {% endif %}
+    {% if product.selected_or_first_available_variant.available %}
+    "availability": "https://schema.org/InStock",
+    {% else %}
+    "availability": "https://schema.org/OutOfStock",
+    {% endif %}
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": {{ cart.currency.iso_code | json }}
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "2",
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "3",
+          "maxValue": "7",
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": "30",
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    }
+  }
+  
+  {% comment %} Reviews Integration - Supports Judge.me, Yotpo, Stamped {% endcomment %}
+  {% if product.metafields.judgeme.badge != blank %}
+    {% assign rating_value = product.metafields.judgeme.badge | split: 'data-average-rating="' | last | split: '"' | first %}
+    {% assign review_count = product.metafields.judgeme.badge | split: 'data-number-of-reviews="' | last | split: '"' | first %}
+    {% if review_count and review_count != '0' %}
+    ,"aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{ rating_value | json }},
+      "reviewCount": {{ review_count | json }},
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+    {% endif %}
+  {% elsif product.metafields.yotpo.reviews_count != blank and product.metafields.yotpo.reviews_count > 0 %}
+    ,"aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{ product.metafields.yotpo.reviews_average | json }},
+      "reviewCount": {{ product.metafields.yotpo.reviews_count | json }},
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  {% elsif product.metafields.reviews.rating.value != blank %}
+    {% assign rating = product.metafields.reviews.rating.value %}
+    {% assign review_count = product.metafields.reviews.rating_count.value %}
+    {% if review_count and review_count > 0 %}
+    ,"aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{ rating | json }},
+      "reviewCount": {{ review_count | json }},
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+    {% endif %}
+  {% endif %}
+  
+  {% comment %} Manufacturer Information {% endcomment %}
+  {% if product.vendor != blank %}
+  ,"manufacturer": {
+    "@type": "Organization",
+    "name": {{ product.vendor | json }}
+  }
+  {% endif %}
+  
+  {% comment %} Warranty Information via Metafield {% endcomment %}
+  {% if product.metafields.custom.warranty %}
+  ,"warranty": {{ product.metafields.custom.warranty | json }}
+  {% endif %}
+}
+</script>
+{% endif %}

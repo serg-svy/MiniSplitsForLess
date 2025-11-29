@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://minisplitsforless.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mini Split Systems",
+      "item": "https://minisplitsforless.com/collections/mini-split-systems"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Single-Zone Systems",
+      "item": "https://minisplitsforless.com/collections/single-zone-mini-splits"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Cooper & Hunter 12000 BTU Mini Split",
+      "item": "https://minisplitsforless.com/products/cooper-hunter-12000-btu-mini-split"
+    }
+  ]
+}

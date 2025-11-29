@@ -1,0 +1,133 @@
+# MiniSplitsForLess Robots.txt
+# ============================
+# This file instructs search engine crawlers which pages to crawl
+# and which to ignore. For Shopify stores, this file should be
+# created as 'robots.txt.liquid' in the templates folder.
+#
+# IMPORTANT: In Shopify, edit via:
+# Online Store > Themes > Edit code > Templates > robots.txt.liquid
+
+User-agent: *
+# Allow all crawlers
+
+# ==================
+# DISALLOW PATTERNS
+# ==================
+
+# Admin and account pages
+Disallow: /admin
+Disallow: /account
+Disallow: /account/*
+
+# Cart and checkout (private user data)
+Disallow: /cart
+Disallow: /cart/*
+Disallow: /carts
+Disallow: /checkout
+Disallow: /checkout/*
+Disallow: /checkouts/
+Disallow: /orders
+Disallow: /orders/*
+
+# Internal search (often low-value, duplicate content)
+Disallow: /search
+Disallow: /search?*
+
+# Collection filters and sorting (duplicate content)
+Disallow: /collections/*+*
+Disallow: /collections/*%2B*
+Disallow: /collections/*%2b*
+Disallow: /*?*sort_by*
+Disallow: /*?*filter.*
+Disallow: /*?*page=*
+
+# Product variants as separate URLs (canonical goes to main product)
+Disallow: /*?*variant=*
+
+# Other utility pages
+Disallow: /policies/
+Disallow: /password
+Disallow: /gift_cards/*
+Disallow: /discount/*
+
+# ==================
+# ALLOW PATTERNS
+# ==================
+
+# Allow access to static resources
+Allow: /*.css
+Allow: /*.css$
+Allow: /*.js
+Allow: /*.js$
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.woff
+Allow: /*.woff2
+
+# Allow important pages even if they match disallow patterns
+Allow: /collections/
+Allow: /products/
+Allow: /pages/
+Allow: /blogs/
+
+# ==================
+# SITEMAP
+# ==================
+
+Sitemap: https://minisplitsforless.com/sitemap.xml
+
+# ==================
+# NOTES
+# ==================
+
+# 1. Shopify generates robots.txt dynamically. To customize:
+#    - Create templates/robots.txt.liquid in your theme
+#    - The liquid syntax will render as plain text
+#
+# 2. Example robots.txt.liquid content:
+#    
+#    User-agent: *
+#    {{ shop.robots_txt }}
+#    Sitemap: {{ shop.url }}/sitemap.xml
+#
+# 3. To add custom rules in robots.txt.liquid:
+#
+#    User-agent: *
+#    Disallow: /search
+#    Disallow: /cart
+#    {{ shop.robots_txt }}
+#    Sitemap: {{ shop.url }}/sitemap.xml
+#
+# 4. Test your robots.txt with Google Search Console:
+#    https://search.google.com/search-console
+#    Navigate to: Settings > robots.txt Tester
+
+# ==================
+# CRAWL-DELAY (Optional)
+# ==================
+
+# Uncomment to slow down crawling if server issues occur:
+# Crawl-delay: 10
+
+# ==================
+# SPECIFIC BOT RULES (Optional)
+# ==================
+
+# Googlebot (Google)
+User-agent: Googlebot
+Allow: /
+
+# Bingbot (Bing)
+User-agent: Bingbot
+Allow: /
+
+# Block bad bots (optional)
+# User-agent: AhrefsBot
+# Disallow: /
+
+# User-agent: SemrushBot
+# Disallow: /

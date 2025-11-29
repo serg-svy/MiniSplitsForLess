@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MiniSplitsForLess XML Sitemap Example
+  =====================================
+  
+  NOTE: Shopify automatically generates sitemaps at /sitemap.xml
+  This file is an EXAMPLE showing the proper structure.
+  
+  Shopify's auto-generated sitemap includes:
+  - Products
+  - Collections  
+  - Pages
+  - Blog posts
+  - Product images
+  
+  Access your live sitemap at:
+  https://minisplitsforless.com/sitemap.xml
+-->
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ==================== -->
+  <!-- HOMEPAGE             -->
+  <!-- ==================== -->
+  <url>
+    <loc>https://minisplitsforless.com/</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ==================== -->
+  <!-- MAIN COLLECTIONS     -->
+  <!-- ==================== -->
+  
+  <!-- All Mini Splits -->
+  <url>
+    <loc>https://minisplitsforless.com/collections/all</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Single-Zone Mini Splits -->
+  <url>
+    <loc>https://minisplitsforless.com/collections/single-zone-mini-splits</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Multi-Zone Mini Splits -->
+  <url>
+    <loc>https://minisplitsforless.com/collections/multi-zone-mini-splits</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- By BTU Size -->
+  <url>
+    <loc>https://minisplitsforless.com/collections/9000-btu-mini-splits</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/collections/12000-btu-mini-splits</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/collections/18000-btu-mini-splits</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/collections/24000-btu-mini-splits</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- By Brand -->
+  <url>
+    <loc>https://minisplitsforless.com/collections/cooper-hunter</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/collections/olmo</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Accessories -->
+  <url>
+    <loc>https://minisplitsforless.com/collections/accessories</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ==================== -->
+  <!-- PRODUCT PAGES        -->
+  <!-- ==================== -->
+  
+  <!-- Example Product 1: Cooper & Hunter 12000 BTU -->
+  <url>
+    <loc>https://minisplitsforless.com/products/cooper-hunter-12000-btu-mini-split</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://minisplitsforless.com/cdn/shop/products/ch-12000-main.webp</image:loc>
+      <image:title>Cooper &amp; Hunter 12000 BTU Mini Split Indoor Unit</image:title>
+      <image:caption>Cooper &amp; Hunter 12000 BTU ductless mini split air conditioner with heat pump</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://minisplitsforless.com/cdn/shop/products/ch-12000-outdoor.webp</image:loc>
+      <image:title>Cooper &amp; Hunter 12000 BTU Outdoor Condenser</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://minisplitsforless.com/cdn/shop/products/ch-12000-remote.webp</image:loc>
+      <image:title>Cooper &amp; Hunter Mini Split Remote Control</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Example Product 2: OLMO 18000 BTU -->
+  <url>
+    <loc>https://minisplitsforless.com/products/olmo-18000-btu-mini-split</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://minisplitsforless.com/cdn/shop/products/olmo-18000-main.webp</image:loc>
+      <image:title>OLMO 18000 BTU Mini Split System</image:title>
+      <image:caption>OLMO 18000 BTU ductless mini split with WiFi control</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Example Product 3: Multi-Zone System -->
+  <url>
+    <loc>https://minisplitsforless.com/products/cooper-hunter-multi-zone-3-zone-27000-btu</loc>
+    <lastmod>2024-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://minisplitsforless.com/cdn/shop/products/ch-multizone-3-main.webp</image:loc>
+      <image:title>Cooper &amp; Hunter 3-Zone Multi-Zone Mini Split System</image:title>
+    </image:image>
+  </url>
+
+  <!-- ==================== -->
+  <!-- INFORMATION PAGES    -->
+  <!-- ==================== -->
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/about-us</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/contact</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/shipping-policy</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/return-policy</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/warranty</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/faq</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/installation-guide</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/pages/sizing-calculator</loc>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==================== -->
+  <!-- BLOG POSTS           -->
+  <!-- ==================== -->
+  
+  <url>
+    <loc>https://minisplitsforless.com/blogs/hvac-guide</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/blogs/hvac-guide/how-to-choose-mini-split-size</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://minisplitsforless.com/cdn/shop/articles/mini-split-size-guide.webp</image:loc>
+      <image:title>Mini Split Size Guide - BTU Calculator</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/blogs/hvac-guide/understanding-seer-ratings</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/blogs/hvac-guide/single-zone-vs-multi-zone</loc>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://minisplitsforless.com/blogs/hvac-guide/mini-split-maintenance-checklist</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
+
+<!--
+  SITEMAP GUIDELINES:
+  ===================
+  
+  1. PRIORITY VALUES:
+     - 1.0: Homepage
+     - 0.8-0.9: Main category pages, important products
+     - 0.6-0.7: Regular products, blog posts
+     - 0.4-0.5: Policy pages, less important content
+  
+  2. CHANGEFREQ OPTIONS:
+     - always: Real-time content (rare for e-commerce)
+     - hourly: Frequently updated content
+     - daily: Products with price changes, homepage
+     - weekly: Regular products, collections
+     - monthly: Static pages, old blog posts
+     - yearly: Archived content
+     - never: Never changes
+  
+  3. IMAGE SITEMAP EXTENSION:
+     - Include up to 1,000 images per URL
+     - Use descriptive titles and captions
+     - Images must be accessible to crawlers
+  
+  4. SUBMISSION:
+     - Submit to Google Search Console
+     - Submit to Bing Webmaster Tools
+     - Reference in robots.txt
+  
+  5. LIMITS:
+     - Max 50,000 URLs per sitemap
+     - Max 50MB uncompressed
+     - Use sitemap index for larger sites
+-->
